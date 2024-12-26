@@ -13,10 +13,12 @@ config();
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+console.log(process.env.REACT_URL,"fajsdlfjas");
 app.use(
   cors({
-    origin: [process.env.REACT_URL],
+    origin: [process.env.REACT_URL,"https://db089jq8-3000.inc1.devtunnels.ms"],
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
   })
 );
 connectDB(process.env.MONGO_URL);
